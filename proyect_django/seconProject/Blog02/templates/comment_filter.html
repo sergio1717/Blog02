@@ -1,0 +1,30 @@
+{% extends "base.html"%}
+
+{%block title%} Comments Filter {%endblock%}
+
+{%block content%}
+	<div id="con">
+		{%if list_comment %}
+
+			<tr>Search Found</tr>
+			{%for comment in list_comment%}
+				<table id="tab">
+
+					<tr>
+						<td><h2>{{comment.title|upper}}</h2></td>
+						<td><p>Author: {{comment.author}}</p></td>
+					</tr>
+
+					<tr>
+						<td><spam>{{comment.body}}</spam></td>
+					</tr>
+
+				</table>
+			{%endfor%}
+
+		{%else%}
+			Search not found
+		{%endif%}
+</div>
+{%endblock%}
+

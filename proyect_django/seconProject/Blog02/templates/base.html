@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{%block title%}  {%endblock%} </title>
+
+	<style type="text/css">
+		a{
+			color: #DCE7FF;
+		}
+		#head{
+			position: absolute;
+			left: 0%;
+			top: 0%;
+			width: 97%;
+			height: 13%;
+			background: #000000;
+			text-align: center;
+			color: #DCE7FF;
+			font-family: 'Arial', cursive;
+
+		}
+		
+		#nav{
+			background: #505057;
+			position: absolute;
+			top: 15%;
+			left: 0%;
+			text-align: center;
+			height: 85%;
+			width: 15%;
+			color: #DCE7FF;
+
+			
+		}
+		#content{
+			background: #D3D5DB;
+			position: absolute;
+			top: 15%;
+			width: 80%;
+			height: 73%;
+			left: 17%;		
+			
+			overflow: auto;
+			
+		}
+		#footd{
+			background: #A5A6A8;
+			position: absolute;
+			top: 90%;
+			width: 80%;
+			height: 10%;
+			left: 17%;	
+			text-align: center;	
+		}
+		#con{
+			position: absolute;
+			background: #D3D5DB;
+			left: 20px;
+			padding-left: 10px;
+			right: 10px;
+			padding-right: 10px;
+			top: 10px;
+			
+		}
+		#tab{
+
+			background: #A5A6A8;
+			border-width:5px;  
+			border-style:outset;
+
+		}
+	</style>
+
+</head>
+<body style="background: #D3D5DB;">
+
+	<div id="head"> 
+
+		<a href="/"><h1> Mi Blog</h1></a>
+		<h3> Today is: {{fecha_actual}}</h3>
+
+	</div>
+
+
+
+	<div id="nav">
+		
+	 
+		{%block nav%}
+			{%for category in list_category%}
+
+			
+
+			<a href="/{{category.name}}" >
+				<h2><p>{{category.name}}</p></h2>	
+			</a>
+
+
+		{%endfor%}
+
+		{%endblock%}
+
+	</div>
+
+
+
+	<div id="content" >
+		{% block content %}
+		{% endblock %} 
+	</div>
+
+
+
+	<div id="footd">
+		{% block footer %} 
+			<hr> 
+			<p>Thanks to visit our website.</p> 
+			<p>Create by Sergio García Martínez</p>
+		{% endblock %}
+
+	</div>
+
+</body> 
+</html> 
